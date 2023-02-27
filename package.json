@@ -1,0 +1,39 @@
+{
+  "name": "grape-rpa",
+  "version": "0.0.3",
+  "author": "GrapeSoft",
+  "description": "grape-rpa",
+  "main": "./index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "dev": "cd node-red && npm run build && cd .. && electron .",
+    "fast-dev": "electron .",
+    "build-dev": "cd node-red && npm run dev",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "build": "npm run package && electron-forge make",
+    "publish": "electron-forge publish",
+    "publish-dry": "electron-forge publish --dry-run",
+    "publish-to-dry": "electron-forge publish --from-dry-run",
+    "test": "echo \" Warning: no test specified \""
+  },
+  "devDependencies": {
+    "@electron-forge/async-ora": "^6.0.0",
+    "@electron-forge/cli": "^6.0.5",
+    "@electron-forge/maker-deb": "^6.0.4",
+    "@electron-forge/maker-rpm": "^6.0.4",
+    "@electron-forge/maker-squirrel": "^6.0.5",
+    "@electron-forge/maker-wix": "^6.0.5",
+    "@electron-forge/maker-zip": "^6.0.4",
+    "@electron-forge/publisher-s3": "^6.0.5",
+    "electron": "^22.3.0",
+    "yamljs": "^0.3.0"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-store": "^8.1.0"
+  },
+  "config": {
+    "forge": "./forge.config.js"
+  }
+}

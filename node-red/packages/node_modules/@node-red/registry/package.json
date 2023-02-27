@@ -1,0 +1,26 @@
+{
+    "name": "@node-red/registry",
+    "version": "3.0.2",
+    "license": "Apache-2.0",
+    "main": "./lib/index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/node-red/node-red.git"
+    },
+    "contributors": [
+        {
+            "name": "Nick O'Leary"
+        },
+        {
+            "name": "Dave Conway-Jones"
+        }
+    ],
+    "dependencies": {
+        "@node-red/util": "3.0.2",
+        "clone": "2.1.2",
+        "fs-extra": "10.1.0",
+        "semver": "7.3.7",
+        "tar": "6.1.11",
+        "uglify-js": "3.16.3"
+    }
+}

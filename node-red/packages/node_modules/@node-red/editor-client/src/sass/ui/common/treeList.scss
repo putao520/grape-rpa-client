@@ -1,0 +1,147 @@
+/**
+ * Copyright JS Foundation and other contributors, http://js.foundation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ **/
+
+.red-ui-treeList {
+    &:focus {
+        outline: none !important;
+    }
+}
+
+.red-ui-treeList-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: var(--red-ui-tertiary-background);
+
+    border: 1px solid var(--red-ui-form-input-border-color);
+    border-radius: 4px;
+
+    box-sizing: border-box;
+
+    .red-ui-editableList-border {
+        border: none;
+    }
+
+    .red-ui-editableList-container {
+        padding: 0px;
+    }
+
+    .red-ui-editableList-container li {
+        padding: 0;
+        border-bottom: none;
+        .red-ui-editableList-container {
+            // margin-left: 15px;
+        }
+    }
+    .red-ui-editableList-item-content {
+        & > .red-ui-treeList-label .fa-angle-right {
+            transition: transform 0.1s ease-in-out;
+        }
+        .red-ui-editableList {
+            // display: none;
+        }
+        &.expanded {
+            & > .red-ui-treeList-label .fa-angle-right {
+                transform: rotate(90deg)
+            }
+            // & > .red-ui-editableList {
+            //     display: block
+            // }
+            // & > .red-ui-treeList-spinner {
+            //     display: block;
+            // }
+        }
+    }
+}
+.red-ui-treeList-label {
+    @include disable-selection;
+    padding: 6px 0;
+    display: flex;
+    align-items: center;
+    color: var(--red-ui-list-item-color);
+    text-decoration: none;
+    cursor: pointer;
+    vertical-align: middle;
+    margin: 0;
+    position: relative;
+
+    &:hover, &:hover .red-ui-treeList-sublabel-text {
+        background: var(--red-ui-list-item-background-hover);
+        color: var(--red-ui-list-item-color);
+        text-decoration: none;
+    }
+    &:focus, &:focus .red-ui-treeList-sublabel-text {
+        background: var(--red-ui-list-item-background-hover);
+        outline: none;
+        color: var(--red-ui-list-item-color);
+        text-decoration: none;
+    }
+    &.focus, &.focus .red-ui-treeList-sublabel-text {
+        background: var(--red-ui-list-item-background-hover);
+        outline: 1px solid var(--red-ui-form-input-focus-color) !important;
+        outline-offset: -1px;
+        color: var(--red-ui-list-item-color);
+    }
+    &.selected, &.selected .red-ui-treeList-sublabel-text {
+        background: var(--red-ui-list-item-background-selected);
+        outline: none;
+        color: var(--red-ui-list-item-color);
+    }
+
+    input.red-ui-treeList-checkbox,
+    input.red-ui-treeList-radio {
+        margin: 0;
+    }
+}
+.red-ui-treeList-label-text {
+    margin-left: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &:empty {
+        min-height: 20px;
+    }
+}
+.red-ui-treeList-sublabel-text {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0 10px 0 5px;
+    line-height: 32px;
+    font-size: 0.9em;
+    color: var(--red-ui-list-item-secondary-color);
+    position: absolute;
+    background: var(--red-ui-list-item-background);
+}
+
+
+.red-ui-treeList-icon {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 20px;
+    text-align: center;
+}
+.red-ui-treeList-spinner {
+    height: 32px;
+    -webkit-mask-image: url(images/spin.svg);
+    mask-image: url(images/spin.svg);
+    -webkit-mask-size: auto 20px;
+    mask-size: auto 20px;
+    -webkit-mask-position: 50% 50%;
+    mask-position: 50% 50%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    background-color: var(--red-ui-spinner-color);
+}

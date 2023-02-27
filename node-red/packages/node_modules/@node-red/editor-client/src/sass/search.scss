@@ -1,0 +1,240 @@
+/**
+ * Copyright JS Foundation and other contributors, http://js.foundation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ **/
+
+.red-ui-search {
+    z-index:1000;
+    display: none;
+    position: absolute;
+    width: 500px;
+    left: 50%;
+    margin-left: -250px;
+    top: 0px;
+    border: 1px solid var(--red-ui-primary-border-color);
+    box-shadow: 0 0 10px var(--red-ui-shadow);
+    background: var(--red-ui-secondary-background);
+
+    .red-ui-searchBox-container {
+        display: inline-block;
+        margin-right: 6px;
+        width: 100%;
+    }
+
+    &:not(.red-ui-type-search) .red-ui-searchBox-container {
+        width: calc(100% - 30px);
+    }
+}
+
+.red-ui-type-search {
+    box-shadow: 0 1px 6px -3px black;
+    background: none;
+    width: 300px;
+    margin-left: 0px;
+    //height: 75px;
+    border: none;
+    .red-ui-search-container {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border: 1px dashed var(--red-ui-primary-border-color);
+        border-bottom: none;
+        padding: 0;
+        width: 100%;
+    }
+    .red-ui-search-results-container {
+        display: none;
+        height: 195px;
+        .red-ui-editableList-container {
+            border: 1px dashed var(--red-ui-primary-border-color);
+            border-top: 1px solid var(--red-ui-secondary-border-color);
+        }
+    }
+    .red-ui-search-result {
+        padding: 2px 2px 2px 5px;
+        font-size: 13px;
+        border-left-width: 3px;
+        border-right-width: 3px;
+        .red-ui-palette-icon-fa {
+            font-size: 11px;
+            position: relative;
+            top: -3px;
+            left: 0px;
+        }
+    }
+    .red-ui-search-result-separator {
+        border-bottom: 3px solid var(--red-ui-secondary-border-color);
+    }
+    .red-ui-search-result-node {
+        position: relative;
+        width: 18px;
+        height: 15px;
+        margin-top: 1px;
+    }
+    .red-ui-search-result-node-port {
+        position: absolute;
+        border-radius: 2px;
+        border: 1px solid var(--red-ui-node-border);
+        width: 6px;
+        height: 7px;
+        top:4px;
+        left:-4px;
+        background: var(--red-ui-node-port-background);
+        box-sizing: border-box;
+    }
+    .red-ui-search-result-node-output{
+        left: 16px;
+    }
+    .red-ui-palette-icon-container {
+        width: 18px;
+    }
+    .red-ui-palette-icon {
+        width: 15px;
+        position:relative;
+        left: -1px;
+    }
+    .red-ui-search-result-description {
+        margin-left:8px;
+    }
+    .red-ui-search-result-node-label {
+        color: var(--red-ui-secondary-text-color);
+    }
+}
+
+.red-ui-search-container {
+    padding: 3px;
+    background: var(--red-ui-form-input-background);
+    border-bottom: 1px solid var(--red-ui-secondary-border-color);
+}
+.red-ui-search-results-container {
+    position:relative;
+    height: 300px;
+    padding: 5px;
+    background: var(--red-ui-primary-background);
+    .red-ui-search-results-list {
+
+    }
+    .red-ui-editableList-container {
+        padding: 0;
+        background: var(--red-ui-primary-background);
+        li {
+            padding: 0;
+        }
+    }
+}
+.red-ui-search-result {
+    padding: 8px 2px 8px 5px;
+    display: flex;
+    align-items: start;
+    cursor: pointer;
+    color: var(--red-ui-list-item-color);
+    background: var(--red-ui-list-item-background);
+    border-left: 3px solid var(--red-ui-list-item-background);
+    border-right: 3px solid var(--red-ui-list-item-background);
+    li.selected & {
+        background: var(--red-ui-list-item-background-selected);
+        border-left-color: var(--red-ui-list-item-border-selected);
+        border-right-color: var(--red-ui-list-item-border-selected);
+    }
+    &:hover {
+        text-decoration: none;
+        color: var(--red-ui-form-text-color);
+        background: var(--red-ui-list-item-background-hover);
+        border-left-color:var(--red-ui-list-item-background-hover);
+        border-right-color:var(--red-ui-list-item-background-hover);
+    }
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+.red-ui-search-result-node {
+    display: inline-block;
+    width: 30px;
+    float:left;
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid var(--red-ui-node-border);
+    background-position: 5% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+
+    .red-ui-palette-icon-container {
+        border-right: none;
+    }
+
+}
+.red-ui-search-result-node-description {
+    margin-left: 10px;
+    margin-right: 5px;
+    flex-grow: 1;
+}
+.red-ui-search-result-node-label {
+    color: var(--red-ui-primary-text-color);
+}
+.red-ui-search-result-node-type {
+    font-style: italic;
+    font-size: 0.9em;
+    color: var(--red-ui-tertiary-text-color);
+}
+.red-ui-search-result-node-flow {
+    float:right;
+    font-size: 0.8em;
+    color: var(--red-ui-tertiary-text-color);
+}
+.red-ui-search-result-node-id {
+    display:none;
+    font-size: 0.8em;
+    color: var(--red-ui-tertiary-text-color);
+}
+.red-ui-search-empty {
+    padding: 10px;
+    text-align: center;
+    font-style: italic;
+    color: var(--red-ui-form-placeholder-color);
+}
+.red-ui-search-history {
+    button {
+        display: none;
+        position: absolute;
+        top: 8px;
+        right: 7px;
+    }
+
+    &:hover button {
+        display: inline;
+    }
+}
+.red-ui-search-historyHeader {
+    button {
+        position: absolute;
+        top: 10px;
+        right: 7px;
+    }
+}
+.red-ui-search-history-result {
+
+}
+
+.red-ui-search-result-action {
+    color: var(--red-ui-primary-text-color);
+}
+.red-ui-search-result-action-key {
+    position: absolute;
+    top: 9px;
+    right: 0;
+    margin-right: 10px;
+    color: var(--red-ui-tertiary-text-color);
+}
