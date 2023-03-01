@@ -2,7 +2,6 @@ const electron = require('electron');
 const BrowserWindow = electron.BrowserWindow;
 const { createModelWindow } = require('../util/modelWindow')
 const {saveWindowsSize, loadWindowsSize} = require("../modules/windowsSize");
-const path = require("path");
 function windowManager(){
     const windows = {}
     this.model = async (name, title, url, preloader, width, height) => {
@@ -16,10 +15,9 @@ function windowManager(){
         win.on('closed', () => {
             delete windows[name]
         })
-        windows[name] = win
+		windows[name] = win
         return win
     }
-
     this.main = (title, preloader, width, height, closeCallback) => {
         const rect = loadWindowsSize('main');
         const mainWindow = new BrowserWindow({
@@ -37,6 +35,7 @@ function windowManager(){
             height: height ? height : rect.height,
             icon: __dirname + "/icon.ico"
         });
+        mainWindow.removeMenu()//去掉菜单栏
         mainWindow.on('close', function() {
             saveWindowsSize('main', mainWindow)
             if( closeCallback ){
@@ -58,7 +57,6 @@ function windowManager(){
         return windows[name]
     }
 }
-const handle = new windowManager()
 module.exports = {
-    windowManager: handle
+    windowManager: new windowManager()
 }

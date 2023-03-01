@@ -2,6 +2,7 @@ const path = require("path");
 const { windowManager } = require('../modules/windowManager');
 const server = require("../../app/app");
 require('./background')
+require('../elementSelector/background')
 
 let mainWindow;
 function createMainWindow() {

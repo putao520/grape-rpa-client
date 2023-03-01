@@ -1,6 +1,7 @@
 const { ipcMain } = require('electron')
 const path = require("path");
 const { windowManager } = require('../modules/windowManager');
+const { extraFunctionRegister } = require('../elementSelector/extraTools');
 
 // 打开元素选择器
 ipcMain.on('open-element-selector', (event, url, xpath, batchMode) => {
@@ -9,7 +10,8 @@ ipcMain.on('open-element-selector', (event, url, xpath, batchMode) => {
         url,
         path.join(__dirname, '../elementSelector/preload.js')
     ).then( win=>{
-
+		// 初始化赋能
+		extraFunctionRegister(win)
     })
 })
 
