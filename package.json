@@ -1,6 +1,6 @@
 {
   "name": "grape-rpa",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "GrapeSoft",
   "description": "grape-rpa",
   "main": "./index.js",
