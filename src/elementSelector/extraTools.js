@@ -42,7 +42,7 @@ function extraFunctionRegister(win){
         }
     ))
     Promise.all(map).then(arr=>{
-        console.log("赋能成功")
+        // console.log("赋能成功")
     })
 }
 

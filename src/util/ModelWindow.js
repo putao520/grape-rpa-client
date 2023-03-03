@@ -17,6 +17,8 @@ async function createModelWindow(name, title, url, preloader, width, height){
         webPreferences: {
             devTools: process.env.NODE_ENV === 'development',//客户端是否可以打开开发者工具     (客户端快捷键：ctrl+shift+i)
             nodeIntegration: true,//开启node模块
+            nodeIntegrationInSubFrames: true,
+            nodeIntegrationInWorker: true,
             enableRemoteModule: true, // 使用remote模块     electron12版本之后废除了,需要自己安装
             // contextIsolation: true,
             //解决axios跨域请求      不推荐，不安全，但简单好用
