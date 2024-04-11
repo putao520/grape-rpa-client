@@ -80,7 +80,7 @@
         "puppeteer-extra-plugin-stealth": "^2.11.1",
         "raw-body": "2.5.1",
         "semver": "7.3.7",
-        "tar": "6.1.11",
+        "tar": "6.2.1",
         "tough-cookie": "4.0.0",
         "uglify-js": "3.16.3",
         "uuid": "8.3.2",
