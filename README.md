@@ -1,6 +1,6 @@
 # grape-rpa-client
 
-> **Status: archived / no longer maintained.**
+> **Status: no longer maintained.**
 >
 > This project is no longer actively maintained. No further bug fixes, feature work, compatibility updates, or support are planned.
 >
